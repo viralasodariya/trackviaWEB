@@ -2,9 +2,23 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { useEffect } from 'react'
+
 
 function App() {
   const [count, setCount] = useState(0)
+
+  useEffect(()=>{
+    console.log("App loaded");
+    const params=new URLSearchParams(window.location.search);
+    const shop=params.get('shop');
+
+    if(shop){
+      
+      window.location.href=`https://trackvia-back.vercel.app/api/auth/install?shop=${shop}`;
+    }
+
+  }, [])
 
   return (
     <>
