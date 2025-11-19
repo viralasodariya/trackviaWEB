@@ -14,7 +14,7 @@ function App() {
     const shop=params.get('shop');
 
     if(shop){
-      window.location.href=`https://trackvia-back.vercel.app/api/auth/install?shop=${shop}`;
+      window.location.href=`http://localhost:3000/api/auth/install?shop=${shop}`;
     }
 
   }, [])
